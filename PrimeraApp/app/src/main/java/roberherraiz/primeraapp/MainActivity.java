@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-/*
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -45,13 +43,14 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        }); */
+        });
 
-        TextView myText = new TextView(this);
+//        TextView myText = new TextView(this);
+//
+//        myText.setText("Hola alumnos! 🥰");
+//
+//        setContentView(myText);
 
-        myText.setText("Hola alumnos! 🥰");
-
-        setContentView(myText);
 
     }
 
