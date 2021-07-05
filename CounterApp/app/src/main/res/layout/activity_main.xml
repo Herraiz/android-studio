@@ -12,8 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/main_title"
-        android:textColor="@color/black"
-        android:textSize="34sp"
+        android:textSize="46sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,48 +20,52 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.078" />
 
-    <Button
-        android:id="@+id/button_increase"
+
+    <TextView
+        android:id="@+id/counterTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
-        android:background="@color/purple_500"
-        android:text="@string/text_increase_button"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/purple_200"
-        app:backgroundTintMode="src_in"
+        android:layout_marginTop="108dp"
+        android:textSize="32sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/button_decrease"
+        android:id="@+id/button_increase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="@color/purple_500"
-        android:text="@string/text_decrease_button"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/purple_200"
-        app:backgroundTintMode="src_in"
+        android:layout_marginTop="108dp"
+        android:onClick="increaseCounter"
+        android:text="@string/text_increase_button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_reset" />
+        app:layout_constraintTop_toBottomOf="@+id/counterTextView" />
 
     <Button
         android:id="@+id/button_reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="@color/purple_500"
+        android:layout_marginTop="44dp"
         android:text="@string/text_reset_button"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/purple_200"
-        app:backgroundTintMode="src_in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_increase" />
+        app:layout_constraintTop_toBottomOf="@+id/button_increase"
+        android:onClick="resetCounter" />
+
+    <Button
+        android:id="@+id/button_decrease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/text_decrease_button"
+        app:backgroundTintMode="src_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_reset"
+        android:onClick="decreaseCounter" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
