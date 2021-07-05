@@ -10,6 +10,10 @@
 
     <string name="magic_button">Magia</string>
 
+    <string name="string_button">Este es el texto del botón 1</string>
+    <string name="string_button2">Este es el botón 2</string>
+    <string name="string_button3">3</string>
+
     <string name="hello_first_fragment">Hola Mundo!!</string>
     <string name="hello_second_fragment">Hola Mundo, este es el segundo fragmento.</string>
 </resources>
