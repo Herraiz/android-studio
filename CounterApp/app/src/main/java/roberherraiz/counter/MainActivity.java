@@ -37,7 +37,6 @@ public class MainActivity extends Activity {
 
     public void showCounter() {
 
-        /* Usamos un casting a textview del id de la view */
         TextView counterText = findViewById(R.id.counterTextView);
         counterText.setText("" + count);
 
