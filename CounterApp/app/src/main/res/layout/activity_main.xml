@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,69 +7,87 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/main_title"
-        android:textColor="@color/black"
-        android:textSize="46sp"
-        android:textStyle="bold" />
-
-
-    <TextView
-        android:id="@+id/counterText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:textColor="@color/black"
-        android:textSize="64sp"
-        android:textStyle="bold" />
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="324dp"
-        android:gravity="center_horizontal"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal|top"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button_increase"
+        <TextView
+            android:id="@+id/titleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="108dp"
-            android:background="@color/purple_700"
-            android:onClick="increaseCounter"
-            android:text="@string/text_increase_button"
-            android:textColor="@color/white" />
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/main_title"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/black"
+            android:textSize="42sp" />
 
-        <Button
-            android:id="@+id/button_decrease"
+        <TextView
+            android:id="@+id/counterText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:background="@color/purple_700"
-            android:onClick="decreaseCounter"
-            android:text="@string/text_decrease_button"
-            android:textColor="@color/white" />
+            android:layout_below="@+id/titleText"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/black"
+            android:textSize="64sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:gravity="center|center_vertical"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_increase"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@color/purple_700"
+            android:onClick="increaseCounter"
+            android:text="@string/text_increase_button"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+
+        <Space
+            android:layout_width="50dp"
+            android:layout_height="0dp" />
+
+        <Button
+            android:id="@+id/button_decrease"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@color/purple_700"
+            android:onClick="decreaseCounter"
+            android:text="@string/text_decrease_button"
+            android:textColor="@color/white"
+            android:textSize="40dp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/button_reset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:background="@color/purple_700"
             android:onClick="resetCounter"
             android:text="@string/text_reset_button"
             android:textColor="@color/white" />
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>
