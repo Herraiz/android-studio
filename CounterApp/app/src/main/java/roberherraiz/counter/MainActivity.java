@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
 
     public void showCounter() {
 
-        TextView counterText = findViewById(R.id.counterTextView);
+        TextView counterText = findViewById(R.id.counterText);
         counterText.setText("" + count);
 
     }
