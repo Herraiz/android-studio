@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context=".MainActivity">
 
 
     <TextView
@@ -72,41 +71,42 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.579" />
 
+    <EditText
+        android:id="@+id/nReset"
+        android:layout_width="72sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:cursorVisible="false"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="0"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/resetButton"
+        app:layout_constraintTop_toBottomOf="@+id/button_decrease"
+        app:layout_constraintVertical_bias="0.811" />
+
     <Button
-        android:id="@+id/negatives"
+        android:id="@+id/resetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/purple_700"
+        android:gravity="center"
         android:onClick="resetCounter"
         android:text="@string/text_reset_button"
         android:textColor="@color/white"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/counterText"
-        app:layout_constraintVertical_bias="0.941" />
-
-    <EditText
-        android:id="@+id/nReset"
-        android:layout_width="72sp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:cursorVisible="false"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:hint="0"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/negatives"
-        app:layout_constraintTop_toBottomOf="@+id/button_decrease"
-        app:layout_constraintVertical_bias="0.862" />
+        app:layout_constraintVertical_bias="0.915" />
 
     <CheckBox
         android:id="@+id/negativeCheckBox"
@@ -118,13 +118,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:gravity="center"
         android:text="Allow Negatives"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.377"
+        app:layout_constraintHorizontal_bias="0.327"
         app:layout_constraintStart_toEndOf="@+id/nReset"
         app:layout_constraintTop_toBottomOf="@+id/button_increase"
-        app:layout_constraintVertical_bias="0.87" />
+        app:layout_constraintVertical_bias="0.805" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
