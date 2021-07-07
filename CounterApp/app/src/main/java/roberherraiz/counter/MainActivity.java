@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
 
     public void increaseCounter(View view) {
         count++;
-        resultText.setText("" + count);
+        resultText.setText(getString(R.string.counterText, count));
     }
 
     public void decreaseCounter(View view) {
@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
                 count = 0;
             }
         }
-        resultText.setText("" + count);
+        resultText.setText(getString(R.string.counterText, count));
     }
 
     public void resetCounter(View view) {
@@ -49,7 +49,7 @@ public class MainActivity extends Activity {
         }
 
         resetNumber.setText(""); // reseteamos el resetNumber
-        resultText.setText("" + count);
+        resultText.setText(getString(R.string.counterText, count));
     }
 
 
