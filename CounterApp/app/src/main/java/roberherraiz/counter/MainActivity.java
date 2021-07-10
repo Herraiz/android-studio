@@ -3,6 +3,7 @@ package roberherraiz.counter;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -17,7 +18,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        resultText = (TextView) findViewById(R.id.counterText);
+        resultText = findViewById(R.id.counterText);
         count = 0;
     }
 
@@ -31,7 +32,7 @@ public class MainActivity extends Activity {
     public void decreaseCounter(View view) {
         count--;
         if (count < 0) {
-            CheckBox negatives = (CheckBox)findViewById(R.id.negativeCheckBox);
+            CheckBox negatives = findViewById(R.id.negativeCheckBox);
             if (!negatives.isChecked()) {
                 count = 0;
             }
@@ -40,7 +41,7 @@ public class MainActivity extends Activity {
     }
 
     public void resetCounter(View view) {
-        EditText resetNumber = (EditText)findViewById(R.id.nReset);
+        EditText resetNumber = findViewById(R.id.nReset);
 
         try {
         count = Integer.parseInt(resetNumber.getText().toString());
@@ -50,8 +51,10 @@ public class MainActivity extends Activity {
 
         resetNumber.setText(""); // reseteamos el resetNumber
         resultText.setText(getString(R.string.counterText, count));
+
+        InputMethodManager myKeyboard = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        myKeyboard.hideSoftInputFromWindow(resetNumber.getWindowToken(), 0);
+
     }
-
-
 
 }
