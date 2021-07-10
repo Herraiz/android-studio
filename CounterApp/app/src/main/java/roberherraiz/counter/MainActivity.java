@@ -2,7 +2,9 @@ package roberherraiz.counter;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -20,6 +22,11 @@ public class MainActivity extends Activity {
 
         resultText = findViewById(R.id.counterText);
         count = 0;
+
+        KeyboardEvent keyboard = new KeyboardEvent();
+        EditText nReset = findViewById(R.id.nReset);
+        nReset.setOnEditorActionListener(keyboard);
+
     }
 
     /* Las funciones de lógica de eventos deben recibir el View, osea, el botón en estos casos */
@@ -55,6 +62,19 @@ public class MainActivity extends Activity {
         InputMethodManager myKeyboard = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         myKeyboard.hideSoftInputFromWindow(resetNumber.getWindowToken(), 0);
 
+    }
+
+    class KeyboardEvent implements TextView.OnEditorActionListener {
+
+        @Override
+        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                resetCounter(null);
+            }
+
+            return false;
+        }
     }
 
 }
