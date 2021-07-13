@@ -4,5 +4,9 @@
     <string name="button_config">Configuración</string>
     <string name="button_more_info">Más información</string>
     <string name="button_quit">Salir</string>
+    <string name="about_title">Acerca de:</string>
+    <string name="developer">Desarrollado por Rober Herraiz</string>
+    <string name="date">Fecha de creación: 13/07/2021</string>
+    <string name="about_logo" translatable="false">Rober Herraiz logo</string>
 
 </resources>

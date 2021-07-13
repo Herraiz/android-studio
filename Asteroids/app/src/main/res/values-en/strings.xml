@@ -4,5 +4,8 @@
     <string name="button_config">Config</string>
     <string name="button_more_info">About</string>
     <string name="button_quit">Exit</string>
+    <string name="about_title">About:</string>
+    <string name="developer">Developed by Rober Herraiz</string>
+    <string name="date">Creation date: 13/07/2021</string>
 
 </resources>
