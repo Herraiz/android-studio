@@ -12,9 +12,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageView img = findViewById(R.id.logoImage);
-
-        img.setImageResource(R.drawable.logo);
-
     }
 }
