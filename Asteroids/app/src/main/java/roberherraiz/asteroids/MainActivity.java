@@ -1,10 +1,12 @@
 package roberherraiz.asteroids;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,4 +28,24 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_en_activity, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == R.id.config) {
+            return true;
+        } else if (id == R.id.info ) {
+            run_about(null);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }

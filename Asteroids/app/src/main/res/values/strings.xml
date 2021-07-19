@@ -8,5 +8,7 @@
     <string name="developer">Desarrollado por Rober Herraiz</string>
     <string name="date">Fecha de creación: 13/07/2021</string>
     <string name="about_logo" translatable="false">Rober Herraiz logo</string>
+    <string name="config">Configuración</string>
+    <string name="info">Información</string>
 
 </resources>

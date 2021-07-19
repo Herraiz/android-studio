@@ -7,5 +7,7 @@
     <string name="about_title">About:</string>
     <string name="developer">Developed by Rober Herraiz</string>
     <string name="date">Creation date: 13/07/2021</string>
+    <string name="config">Config</string>
+    <string name="info">Info</string>
 
 </resources>
