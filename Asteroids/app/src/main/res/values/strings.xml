@@ -10,5 +10,6 @@
     <string name="about_logo" translatable="false">Rober Herraiz logo</string>
     <string name="config">Configuración</string>
     <string name="info">Información</string>
+    <string name="buscar">Buscar</string>
 
 </resources>

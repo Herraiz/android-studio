@@ -9,5 +9,6 @@
     <string name="date">Creation date: 13/07/2021</string>
     <string name="config">Config</string>
     <string name="info">Info</string>
+    <string name="buscar">Search</string>
 
 </resources>
