@@ -1,6 +1,8 @@
 package roberherraizcom.vistasgraficos;
 
+import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -24,12 +26,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
         protected void onDraw(Canvas canvas) {
+
             Paint myBrush = new Paint();
-            myBrush.setColor(Color.BLUE);
+            myBrush.setColor(Color.argb(185, 168, 155, 255));
             myBrush.setStrokeWidth(8);
             myBrush.setStyle(Paint.Style.STROKE);
-
             canvas.drawCircle(175, 175, 100, myBrush);
+
+
+            int myColor;
+            myColor = ContextCompat.getColor(getContext(), R.color.circleFill);
+            myBrush.setColor(myColor);
+            myBrush.setStyle(Paint.Style.FILL);
+            canvas.drawCircle(175, 175, 100, myBrush);
+
         }
 
     }
