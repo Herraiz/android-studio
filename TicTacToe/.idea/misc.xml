@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Herraiz/Proyectos/AndroidStudio/TicTacToe/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Herraiz/Proyectos/AndroidStudio/TicTacToe/app/src/main/res/drawable-xxxhdpi/drawable.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/Herraiz/Proyectos/AndroidStudio/TicTacToe/app/src/main/res/layout/activity_main.xml" value="0.26222826086956524" />
       </map>
     </option>
