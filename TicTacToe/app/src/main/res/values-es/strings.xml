@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tres en Raya</string>
+    <string name="singleplayer">1 Jugador</string>
+    <string name="multiplayer">2 Jugadores</string>
+    <string name="easy">Fácil</string>
+    <string name="normal">Normal</string>
+    <string name="insane">Imposible</string>
+    <string name="box">Casillas</string>
+    <string name="circle_win">¡Ganan los círculos!</string>
+    <string name="crosses_win">¡Ganan las aspas!</string>
+    <string name="tie">¡Empate!</string>
+
+</resources>
