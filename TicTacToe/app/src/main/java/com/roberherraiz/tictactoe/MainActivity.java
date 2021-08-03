@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 
 public class MainActivity extends Activity {
 
@@ -40,10 +41,52 @@ public class MainActivity extends Activity {
             blankBox = findViewById(box);
             blankBox.setImageResource(R.drawable.box);
         }
+
+        /* Number of players */
+
+        players = 1;
+
+        if(view.getId() == R.id.multiplayer) {
+            players = 2;
+        }
+
+        /* Difficulty level */
+
+        RadioGroup configDifficulty = findViewById(R.id.difficultyGroup);
+
+        int id = configDifficulty.getCheckedRadioButtonId();
+
+        int difficulty = 0;
+
+        if (id == R.id.normal) {
+            difficulty = 1;
+        } else if (id == R.id.insane) {
+            difficulty = 2;
+        }
+
+        game = new Game(difficulty);
+
+        /* Deactivating the buttons */
+
+        findViewById(R.id.singleplayer).setEnabled(false);
+        findViewById(R.id.multiplayer).setEnabled(false);
+
+        // findViewById(R.id.difficultyGroup).setAlpha(0);  // Así los ponemos todos en "desactivado"
+        findViewById(R.id.easy).setEnabled(false);
+        findViewById(R.id.normal).setEnabled(false);
+        findViewById(R.id.insane).setEnabled(false);
+
     }
 
 }
 
 class Game {
 
+    public final int difficulty;
+
+    public Game(int difficulty) {
+
+        this.difficulty = difficulty;
+
+    }
 }

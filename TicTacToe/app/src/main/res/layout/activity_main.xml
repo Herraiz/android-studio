@@ -37,6 +37,7 @@
             style="@style/button"/>
 
         <RadioGroup
+            android:id="@+id/difficultyGroup"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content">
 
