@@ -38,6 +38,7 @@
         <item name="android:layout_width">@dimen/box</item>
         <item name="android:layout_height">@dimen/box</item>
         <item name="android:src">@drawable/box</item>
+        <item name="android:layout_margin">2dp</item>
         <item name="android:onClick">tap</item>
 
     </style>

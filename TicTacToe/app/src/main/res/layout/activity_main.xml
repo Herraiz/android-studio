@@ -9,6 +9,11 @@
     android:orientation="horizontal"
     tools:context=".MainActivity">
 
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="0.4"/>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,14 +23,82 @@
 
         <TextView
             style="@style/title"
-            android:text="@string/app_name"
-            />
+            android:text="@string/app_name"/>
 
         <Button
             android:id="@+id/singleplayer"
             android:text="@string/singleplayer"
-            style="@style/button"
-            />
+            style="@style/button"/>
+
+        <RadioGroup
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+
+            <RadioButton
+                android:id="@+id/easy"
+                android:text="@string/easy"
+                style="@style/radius"/>
+            <RadioButton
+                android:id="@+id/normal"
+                android:text="@string/normal"
+                style="@style/radius"/>
+            <RadioButton
+                android:id="@+id/insane"
+                android:text="@string/insane"
+                style="@style/radius"/>
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/multiplayer"
+            android:text="@string/multiplayer"
+            style="@style/button"/>
+
     </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_weight="0.5"/>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:columnCount="3"
+        android:rowCount="3">
+
+        <!--    Creating the box grid    -->
+
+        <ImageView
+            android:id="@+id/a1"
+            style="@style/box"/>
+        <ImageView
+            android:id="@+id/a2"
+            style="@style/box"/>
+        <ImageView
+            android:id="@+id/a3"
+            style="@style/box"/>
+        <ImageView
+            android:id="@+id/b1"
+            style="@style/box"/>
+        <ImageView
+            android:id="@+id/b2"
+            style="@style/box"/>
+        <ImageView
+            android:id="@+id/b3"
+            style="@style/box"/>
+        <ImageView
+            android:id="@+id/c1"
+            style="@style/box"/>
+        <ImageView
+            android:id="@+id/c2"
+            android:src="@drawable/cross"
+            style="@style/box"/>
+        <ImageView
+            android:id="@+id/c3"
+            style="@style/box"/>
+
+    </GridLayout>
 
 </LinearLayout>
