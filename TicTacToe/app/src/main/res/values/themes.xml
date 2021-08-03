@@ -2,6 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.TicTacToe" parent="android:Theme.Holo.NoActionBar.Fullscreen" />
 
+    <!-- App styles. -->
+
     <style name="title">
 
         <item name="android:layout_width">wrap_content</item>
@@ -20,6 +22,8 @@
         <item name="android:layout_margin">@dimen/button_padding</item>
         <item name="android:textSize">@dimen/button_text</item>
         <item name="android:onClick">playNow</item>
+
+        <item name="android:background">@drawable/buttons</item>
 
     </style>
 
