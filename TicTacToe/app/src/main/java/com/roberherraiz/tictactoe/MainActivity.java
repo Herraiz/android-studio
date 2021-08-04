@@ -1,10 +1,13 @@
 package com.roberherraiz.tictactoe;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -76,6 +79,30 @@ public class MainActivity extends Activity {
         findViewById(R.id.normal).setEnabled(false);
         findViewById(R.id.insane).setEnabled(false);
 
+    }
+
+    public void tap(View view) {
+
+        int box = 0;
+
+        for (int i=0; i<9; i++) {
+            if (boxes[i] == view.getId()) {
+                box = i;
+                break;
+            }
+        }
+
+        /* Alert message */
+
+        System.out.println(boxes[box]);
+
+        sendToast(this, "Has pulsado en la casilla: " + box, Toast.LENGTH_SHORT);
+    }
+
+    public void sendToast(Context context, CharSequence text, int duration) {
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
     }
 
 }
