@@ -96,13 +96,17 @@ public class MainActivity extends Activity {
             }
         }
 
-        /* Alert message */
+        /* Playing */
 
         mark(box);
+        box = game.ia();
+        game.turn();
+        mark(box);
+        game.turn();
 
     }
 
-    public void mark(int box) {
+    private void mark(int box) {
 
         ImageView boxImage = findViewById(boxes[box]);
 
