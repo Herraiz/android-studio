@@ -83,6 +83,10 @@ public class MainActivity extends Activity {
 
     public void tap(View view) {
 
+        if (game == null) {
+         return;
+        }
+
         int box = 0;
 
         for (int i=0; i<9; i++) {
@@ -94,9 +98,21 @@ public class MainActivity extends Activity {
 
         /* Alert message */
 
-        System.out.println(boxes[box]);
+        mark(box);
 
-        sendToast(this, "Has pulsado en la casilla: " + box, Toast.LENGTH_SHORT);
+    }
+
+    public void mark(int box) {
+
+        ImageView boxImage = findViewById(boxes[box]);
+
+        if (game.player == 1) {
+            boxImage.setImageResource(R.drawable.circle);
+        } else {
+            boxImage.setImageResource(R.drawable.cross);
+        }
+
+
     }
 
     public void sendToast(Context context, CharSequence text, int duration) {
@@ -105,15 +121,4 @@ public class MainActivity extends Activity {
         toast.show();
     }
 
-}
-
-class Game {
-
-    public final int difficulty;
-
-    public Game(int difficulty) {
-
-        this.difficulty = difficulty;
-
-    }
 }
