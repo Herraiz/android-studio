@@ -97,9 +97,17 @@ public class MainActivity extends Activity {
         }
 
         /* Playing */
+        if (!game.checkEmpty(box)) {
+            return;
+        }
 
         mark(box);
         box = game.ia();
+
+        while (!game.checkEmpty(box)) {
+            box = game.ia();
+        }
+
         game.turn();
         mark(box);
         game.turn();

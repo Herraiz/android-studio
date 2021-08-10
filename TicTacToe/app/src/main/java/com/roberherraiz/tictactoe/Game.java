@@ -6,11 +6,32 @@ public class Game {
 
     public final int difficulty;
     public int player;
+    private final int[] boxes;
 
     public Game(int difficulty) {
 
         this.difficulty = difficulty;
         player = 1;
+
+        boxes = new int[9];
+
+        for (int i = 0; i<9; i++) {
+
+            boxes[i] = 0;
+
+        }
+
+    }
+
+    public boolean checkEmpty(int box) {
+
+        if (boxes[box] != 0) {
+            return false;
+        } else {
+            boxes[box] = player;
+        }
+
+        return true;
 
     }
 
