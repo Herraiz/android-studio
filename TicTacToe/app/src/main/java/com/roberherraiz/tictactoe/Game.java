@@ -52,15 +52,27 @@ public class Game {
         return box;
     }
 
-    public void turn() {
+    public int turn() {
+
+        boolean tie = true;
 
         for (int i = 0; i < COMBINATIONS.length; i++) {
             for (int pos: COMBINATIONS[i]) {
-                System.out.println("Valor en posición " + i + " -> " + boxes[pos]);
+                //  System.out.println("Valor en posición " + i + " -> " + boxes[pos]);
+
+                if (boxes[pos] == 0) {
+                    tie = false;
+                }
+
             }
         }
 
-        player = player % 2 + 1;
-    }
+        if (tie) {
+            return 3;
+        }
 
+        player = player % 2 + 1;
+        return 0;
+
+    }
 }
