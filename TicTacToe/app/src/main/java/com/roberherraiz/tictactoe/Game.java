@@ -5,8 +5,13 @@ import java.util.Random;
 public class Game {
 
     public final int difficulty;
-    public int player;
     private final int[] boxes;
+    private final int[][] COMBINATIONS = {
+            {0, 1, 2}, {3, 4, 5}, {6, 7, 8},
+            {0, 3, 6}, {1, 4, 7}, {2, 5, 8},
+            {0, 4, 8}, {2, 4, 5}
+    };
+    public int player;
 
     public Game(int difficulty) {
 
@@ -15,13 +20,14 @@ public class Game {
 
         boxes = new int[9];
 
-        for (int i = 0; i<9; i++) {
+        for (int i = 0; i < 9; i++) {
 
             boxes[i] = 0;
 
         }
 
     }
+
 
     public boolean checkEmpty(int box) {
 
@@ -47,7 +53,14 @@ public class Game {
     }
 
     public void turn() {
-        player = player%2+1;
+
+        for (int i = 0; i < COMBINATIONS.length; i++) {
+            for (int pos: COMBINATIONS[i]) {
+                System.out.println("Valor en posición " + i + " -> " + boxes[pos]);
+            }
+        }
+
+        player = player % 2 + 1;
     }
 
 }
