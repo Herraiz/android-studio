@@ -102,13 +102,13 @@ public class MainActivity extends Activity {
         }
 
         mark(box);
+        game.turn();
         box = game.ia();
 
         while (!game.checkEmpty(box)) {
             box = game.ia();
         }
 
-        game.turn();
         mark(box);
         game.turn();
 

@@ -55,19 +55,33 @@ public class Game {
     public int turn() {
 
         boolean tie = true;
+        boolean lastMove;
 
-        for (int i = 0; i < COMBINATIONS.length; i++) {
-            for (int pos: COMBINATIONS[i]) {
-                //  System.out.println("Valor en posición " + i + " -> " + boxes[pos]);
+
+        for (int[] combination : COMBINATIONS) {
+
+            lastMove = true;
+
+            for (int pos : combination) {
+
+                if (boxes[pos] != player) lastMove = false;
 
                 if (boxes[pos] == 0) {
                     tie = false;
                 }
 
             }
+
+            if (lastMove) {
+                System.out.println("Juego terminado gana " + player);
+                return player;
+            }
+
+
         }
 
         if (tie) {
+            System.out.println("Empate");
             return 3;
         }
 
