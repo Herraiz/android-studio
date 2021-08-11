@@ -41,6 +41,33 @@ public class Game {
 
     }
 
+    public int bestPlay(int player) {
+
+        int box = -1;
+
+        int togetherPlays = 0;
+
+        for (int[] combination : COMBINATIONS) {
+
+            for (int pos : combination) {
+
+                if (boxes[pos] == player) togetherPlays++;
+
+                if (boxes[pos] == 0) box = pos; // possible best play
+
+            }
+
+            if (togetherPlays == 2 && box != -1) return box;  // best play confirmed
+
+            /* Didn't find best play, trying another possibility  */
+            box = -1;
+            togetherPlays = 0;
+
+        }
+
+        return -1;
+    }
+
     public int ia() {
 
         int box;
