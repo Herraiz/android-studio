@@ -2,6 +2,9 @@ package com.roberherraiz.tictactoe;
 
 import android.app.Activity;
 import android.content.Context;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -14,6 +17,8 @@ public class MainActivity extends Activity {
     private int players;
     private int[] boxes;
     private Game game;
+    private MediaPlayer mark1, mark2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,9 @@ public class MainActivity extends Activity {
         boxes[6] = R.id.c1;
         boxes[7] = R.id.c2;
         boxes[8] = R.id.c3;
+
+        mark1 = MediaPlayer.create(getApplicationContext(), R.raw.player1);
+        mark2 = MediaPlayer.create(getApplicationContext(), R.raw.player2);
 
     }
 
@@ -157,8 +165,10 @@ public class MainActivity extends Activity {
 
         if (game.player == 1) {
             boxImage.setImageResource(R.drawable.circle);
+            mark1.start();
         } else {
             boxImage.setImageResource(R.drawable.cross);
+            mark2.start();
         }
 
 
