@@ -72,6 +72,23 @@ public class Game {
 
         int box;
 
+        /* If IA gets two in a row, will try to win */
+        box = bestPlay(2);
+        if (box != -1) return box;
+
+        /* Prevent player 1 from winning */
+        if (difficulty > 0) {
+            box = bestPlay(1);
+            if (box != -1) return box;
+        }
+        /* In insane, the IA tries to win always the game */
+        if (difficulty == 2) {
+            if (boxes[0]==0) return 0;
+            if (boxes[2]==0) return 2;
+            if (boxes[6]==0) return 6;
+            if (boxes[8]==0) return 8;
+        }
+
         Random randomBox = new Random();
 
         box = randomBox.nextInt(9);
