@@ -45,10 +45,12 @@
                 android:id="@+id/easy"
                 android:text="@string/easy"
                 style="@style/radius"/>
+
             <RadioButton
                 android:id="@+id/normal"
-                android:text="@string/normal"
-                style="@style/radius"/>
+                style="@style/radius"
+                android:checked="true"
+                android:text="@string/normal" />
             <RadioButton
                 android:id="@+id/insane"
                 android:text="@string/insane"

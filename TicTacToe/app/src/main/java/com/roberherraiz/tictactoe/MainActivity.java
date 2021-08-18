@@ -71,14 +71,17 @@ public class MainActivity extends Activity {
 
         /* Deactivating the buttons */
 
-        findViewById(R.id.singleplayer).setEnabled(false);
-        findViewById(R.id.multiplayer).setEnabled(false);
+        showButtons(false);
 
+    }
+
+    private void showButtons(boolean b) {
+        findViewById(R.id.singleplayer).setEnabled(b);
+        findViewById(R.id.multiplayer).setEnabled(b);
         // findViewById(R.id.difficultyGroup).setAlpha(0);  // Así los ponemos todos en "desactivado"
-        findViewById(R.id.easy).setEnabled(false);
-        findViewById(R.id.normal).setEnabled(false);
-        findViewById(R.id.insane).setEnabled(false);
-
+        findViewById(R.id.easy).setEnabled(b);
+        findViewById(R.id.normal).setEnabled(b);
+        findViewById(R.id.insane).setEnabled(b);
     }
 
     public void tap(View view) {
@@ -102,15 +105,49 @@ public class MainActivity extends Activity {
         }
 
         mark(box);
-        game.turn();
-        box = game.ia();
 
-        while (!game.checkEmpty(box)) {
-            box = game.ia();
+        int result = game.turn();
+
+        if (result > 0) {
+
+            finish(result);
+            return;
+
         }
 
-        mark(box);
-        game.turn();
+        if (players == 1) {
+
+            box = game.ia();
+
+            while (!game.checkEmpty(box)) {
+                box = game.ia();
+            }
+
+            mark(box);
+
+            result = game.turn();
+
+            if (result > 0) {
+
+                finish(result);
+
+            }
+        }
+
+    }
+
+    private void finish(int result) {
+
+        String msg;
+
+        if (result == 1) msg = "Gana el Jugador 1";
+        else if (result == 2) msg = "Gana el Jugador 2";
+        else msg = "Empate";
+
+        sendToast(this, msg, 2);
+        game = null;
+        showButtons(true);
+
 
     }
 
