@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-    public int count;
+    public int counter;
     TextView resultText;
 
     @Override
@@ -21,7 +21,9 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         resultText = findViewById(R.id.counterText);
-        count = 0;
+        counter = 0;
+
+        resultText.setText("" + counter);
 
         KeyboardEvent keyboard = new KeyboardEvent();
         EditText nReset = findViewById(R.id.nReset);
@@ -29,35 +31,57 @@ public class MainActivity extends Activity {
 
     }
 
+    /* Cuidado con el nombre de los métodos :) */
+
+    @Override
+    public void onSaveInstanceState(Bundle state) {
+
+        state.putInt("counter", counter);
+
+        /* Llamamos al método de la clase padre y le enviamos el bundle */
+        super.onSaveInstanceState(state);
+
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle state) {
+
+        /* Llamamos al método padre para recuperar el bundle. Posteriormente extraemos la info */
+        super.onRestoreInstanceState(state);
+        counter = state.getInt("counter");
+        resultText.setText("" + counter);
+
+    }
+
     /* Las funciones de lógica de eventos deben recibir el View, osea, el botón en estos casos */
 
     public void increaseCounter(View view) {
-        count++;
-        resultText.setText(getString(R.string.counterText, count));
+        counter++;
+        resultText.setText(getString(R.string.counterText, counter));
     }
 
     public void decreaseCounter(View view) {
-        count--;
-        if (count < 0) {
+        counter--;
+        if (counter < 0) {
             CheckBox negatives = findViewById(R.id.negativeCheckBox);
             if (!negatives.isChecked()) {
-                count = 0;
+                counter = 0;
             }
         }
-        resultText.setText(getString(R.string.counterText, count));
+        resultText.setText(getString(R.string.counterText, counter));
     }
 
     public void resetCounter(View view) {
         EditText resetNumber = findViewById(R.id.nReset);
 
         try {
-        count = Integer.parseInt(resetNumber.getText().toString());
+        counter = Integer.parseInt(resetNumber.getText().toString());
         } catch (Exception e) {
-            count = 0;
+            counter = 0;
         }
 
         resetNumber.setText(""); // reseteamos el resetNumber
-        resultText.setText(getString(R.string.counterText, count));
+        resultText.setText(getString(R.string.counterText, counter));
 
         InputMethodManager myKeyboard = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         myKeyboard.hideSoftInputFromWindow(resetNumber.getWindowToken(), 0);
