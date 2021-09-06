@@ -1,7 +1,9 @@
 package roberherraiz.counter;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -33,12 +35,13 @@ public class MainActivity extends Activity {
 
     /* Cuidado con el nombre de los métodos :) */
 
+    /* Sustituimos bundle por sharedPreferences
     @Override
     public void onSaveInstanceState(Bundle state) {
 
         state.putInt("counter", counter);
 
-        /* Llamamos al método de la clase padre y le enviamos el bundle */
+        // Llamamos al método de la clase padre y le enviamos el bundle
         super.onSaveInstanceState(state);
 
     }
@@ -46,9 +49,31 @@ public class MainActivity extends Activity {
     @Override
     public void onRestoreInstanceState(Bundle state) {
 
-        /* Llamamos al método padre para recuperar el bundle. Posteriormente extraemos la info */
+        // Llamamos al método padre para recuperar el bundle. Posteriormente extraemos la info
         super.onRestoreInstanceState(state);
         counter = state.getInt("counter");
+        resultText.setText("" + counter);
+
+    }
+    */
+
+    /* sharedPreferences.xml sobrescribiendo los métodos onPause() y onResume() */
+
+    @Override
+    public void onPause(){
+        super.onPause();
+
+        SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor myEditor = data.edit();
+        myEditor.putInt("counter", counter);
+        myEditor.apply();
+    }
+
+    public void onResume(){
+        super.onResume();
+
+        SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(this);
+        counter = data.getInt("counter", 0);
         resultText.setText("" + counter);
 
     }
