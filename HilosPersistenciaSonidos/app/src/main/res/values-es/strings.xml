@@ -7,4 +7,5 @@
     <string name="dificil">Difícil</string>
     <string name="ayuda">Ayuda</string>
     <string name="textoAyuda">El objetivo del juego es evitar que la pelota toque el suelo, tocándola con el dedo \n\n Para empujar la pelota hacia una dirección concreta hay que tocarla en la dirección opuesta.  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Buena suerte!</string>
+    <string name="volver">Volver</string>
 </resources>
